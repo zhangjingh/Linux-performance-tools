@@ -1,0 +1,45 @@
+{
+
+    "share_info":{
+	"number":3,
+	"total_time":1,
+	"start_time":2,
+	"frequency":499,
+	"sample_time":3,
+	"step":3
+    },
+
+    "monitor_1":{
+        "soc":1,
+        "mode":"process_monitor",
+        "app_name":"arg_app",
+        "thread_name":"",
+        "threshold_arg_app":220,
+	"core_index":4,
+	"cpu_value":40,
+	"issue_time":["20:27:19","20:27:26","20:27:34","20:27:47",""]
+    },
+
+    "monitor_2":{
+        "soc":1,
+        "mode":"thread_monitor",
+        "app_name":"planner",
+        "thread_name":"planner_main",
+        "threshold_planner_main":10,
+	"core_index":9,
+	"cpu_value":50,
+        "issue_time":["21:02:19","21:02:26","21:02:34","21:02:47",""]
+    },
+
+    "monitor_3":{
+        "soc":1,
+        "mode":"cpu_value_monitor",
+        "app_name":"",
+        "thread_name":"",
+        "threshold_xxx":330,
+	"core_index":9,
+	"cpu_value":60,
+        "issue_time":["21:02:19","21:02:26","21:02:34","21:02:47",""]
+    }
+
+}

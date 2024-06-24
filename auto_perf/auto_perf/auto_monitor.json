@@ -1,0 +1,16 @@
+{
+"start_time":3,
+"number":1, 
+"mode_p_or_t":"p",
+"soc":"S1",
+"app_1":"arg_app",
+"thread_1":"10FusionOptimi0",
+"threshold_arg_app":320,
+"app_2":"planner",
+"thread_2":"xconn",
+"threshold_xconn":10,
+"sample_time":3,
+"total_time":5,
+"step":3,
+"frequency":499
+}
