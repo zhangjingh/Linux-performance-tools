@@ -265,8 +265,8 @@ function get_p_perf_data(){
 
                         echo "OK! Start grasping..."
 
-                        sudo /home/mazu/perf record -F 499 -p $pid_num -o ${task_name}_${cpu_usage}_${datetime}.data -g -- sleep $sample_time
-               	        sudo /home/mazu/perf script -i ${task_name}_${cpu_usage}_${datetime}.data > ${task_name}_${cpu_usage}_${datetime}.unfold
+                        sudo ./perf record -F 499 -p $pid_num -o ${task_name}_${cpu_usage}_${datetime}.data -g -- sleep $sample_time
+               	        sudo ./perf script -i ${task_name}_${cpu_usage}_${datetime}.data > ${task_name}_${cpu_usage}_${datetime}.unfold
 			#~/app/FlameGraphe/stackcollapse-perf.pl ${task_name}_${datetime}.unfold > ${task_name}_${datetime}.folded
 			#~/app/FlameGraph/flamegraph.pl ${task_name}_${datetime}.folded > ${task_name}_${cpu_usage}_${datetime}.svg
 
@@ -317,8 +317,8 @@ function get_t_perf_data(){
                         	echo "OK! Start grasping..."
 
 
-                        	sudo /home/mazu/perf record -F "$frequency" -t "$tid_num" -o ${task_name}_${cpu_usage}_${datetime}_thread.data -g -- sleep "$sample_time"
-                        	sudo /home/mazu/perf script -i ${task_name}_${cpu_usage}_${datetime}_thread.data > ${task_name}_${cpu_usage}_${datetime}_thread.unfold
+                        	sudo ./perf record -F "$frequency" -t "$tid_num" -o ${task_name}_${cpu_usage}_${datetime}_thread.data -g -- sleep "$sample_time"
+                        	sudo ./perf script -i ${task_name}_${cpu_usage}_${datetime}_thread.data > ${task_name}_${cpu_usage}_${datetime}_thread.unfold
 				#~/app/FlameGraph/stackcollapse-perf.pl ${task_name}_${datetime}_thread.unfold > ${task_name}_${datetime}_thread.folded
 				#~/app/FlameGraph/flamegraph.pl ${task_name}_${datetime}_thread.folded > ${task_name}_${pid}_${cpu_usage}_${datetime}_thread.svg
 			
@@ -386,8 +386,8 @@ function get_cpu_perf_data(){
 
                         echo "OK! Start grasping..."
 
-                        sudo /home/mazu/perf record -F 499 -C $core_index -o cpu_${core_index}_${cpu_value_num}_${datetime}.data -g -- sleep $sample_time
-               	        sudo /home/mazu/perf script -i cpu_${core_index}_${cpu_value_num}_${datetime}.data > cpu_${core_index}_${cpu_value_num}_${datetime}.unfold
+                        sudo ./perf record -F 499 -C $core_index -o cpu_${core_index}_${cpu_value_num}_${datetime}.data -g -- sleep $sample_time
+               	        sudo ./perf script -i cpu_${core_index}_${cpu_value_num}_${datetime}.data > cpu_${core_index}_${cpu_value_num}_${datetime}.unfold
 			#~/app/FlameGraphe/stackcollapse-perf.pl ${task_name}_${datetime}.unfold > ${task_name}_${datetime}.folded
 			#~/app/FlameGraph/flamegraph.pl ${task_name}_${datetime}.folded > ${task_name}_${cpu_usage}_${datetime}.svg
 
@@ -666,8 +666,8 @@ function main(){
 				                	echo $current_time
 				                	echo ${issue_time[$index]}
 				                	#echo "抓取"
-							sudo /home/mazu/perf record -F 499 -C $core_index -o cpu_${core_index}_${issue_time[$index]}.data -g -- sleep 3
-				        	        sudo /home/mazu/perf script -i cpu_${core_index}_${issue_time[$index]}.data > cpu_${core_index}_${issue_time[$index]}.unfold
+							sudo ./perf record -F 499 -C $core_index -o cpu_${core_index}_${issue_time[$index]}.data -g -- sleep 3
+				        	        sudo ./perf script -i cpu_${core_index}_${issue_time[$index]}.data > cpu_${core_index}_${issue_time[$index]}.unfold
 							let stop_tag++
 
 				        	fi
